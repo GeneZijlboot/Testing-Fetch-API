@@ -18,3 +18,8 @@ body{
 #RefreshImg{
     cursor: pointer;
 }
+
+#TextStyle{
+    color:white;
+    font-size: 80px;
+}
