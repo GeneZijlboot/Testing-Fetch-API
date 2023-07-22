@@ -16,3 +16,10 @@ form{
 #NewGiphy{
     cursor: pointer;
 }
+
+#MadeBy, a{
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+} 
