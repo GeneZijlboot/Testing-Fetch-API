@@ -10,6 +10,8 @@ body{
 }
 
 #Clicky{
+    display: flex;
+    gap: 5px;
     margin-top: 90px;
 }
 

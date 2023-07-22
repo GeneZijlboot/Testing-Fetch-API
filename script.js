@@ -1,9 +1,12 @@
 let img = document.querySelector('img');
-
 const Refreshbtn = document.querySelector('#RefreshImg');
-Refreshbtn.addEventListener('click', RefreshImg);
+const NewGiphy = document.querySelector('#NewGiphy');
+let UserInput = document.querySelector('#UserInput');
 
-function RefreshImg(){
+Refreshbtn.addEventListener('click', RefreshGiphy);
+NewGiphy.addEventListener('click', DifferentGiphy);
+
+function RefreshGiphy(){
     fetch('https://api.giphy.com/v1/gifs/translate?api_key=4Cdrh3upRQiptnX30px7gGTsqEa0Hcoh&s=cat', {mode: 'cors'})
     .then(function(response) {
         return response.json()
@@ -16,4 +19,10 @@ function RefreshImg(){
     })
 }
 
-RefreshImg();
+function DifferentGiphy(e){
+    e.preventDefault();
+    console.log(UserInput.value);
+    UserInput.value = '';
+}
+
+RefreshGiphy();
