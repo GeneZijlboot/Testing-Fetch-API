@@ -3,30 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>cat giphs</title>
-        <style>
-            body{
-                background-color: rgb(29, 136, 91);
-                display: flex;
-                height: 90vh;
-                align-items: center;
-                justify-content: center;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <img src="#">
-        <script>
-            const img = document.querySelector('img');
-            fetch('https://api.giphy.com/v1/gifs/translate?api_key=4Cdrh3upRQiptnX30px7gGTsqEa0Hcoh&s=cats', {mode: 'cors'})
-                .then(function(response) {
-                    return response.json()
-                })
-                .then(function(response) {
-                    img.src = response.data.images.original.url;
-                })
-                .catch(function(e) {
-                    console.log(e);
-                })
-        </script>
+        <div id="Container">
+            <form>
+                <input id="SearchValue" type="text">
+                <input id="SearchBtn" style="cursor: pointer;" type="submit">
+            </form>
+            <img src="#">
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
