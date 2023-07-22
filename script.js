@@ -1,21 +1,23 @@
-let img = document.querySelector('img');
-const Container = document.querySelector('#Container');
-const Refreshbtn = document.querySelector('#RefreshImg');
-const NewGiphy = document.querySelector('#NewGiphy');
+const NewGiphy = document.getElementById('NewGiphy');
 let UserInput = document.querySelector('#UserInput');
+let img = document.querySelector('img');
 
-Refreshbtn.addEventListener('click', RefreshGiphy);
+const StartImg = 'cats';
+const ErrorMsg = 'error';
+
 NewGiphy.addEventListener('click', DifferentGiphy);
 
 function RefreshGiphy(UserInput){
     fetch('https://api.giphy.com/v1/gifs/translate?api_key=4Cdrh3upRQiptnX30px7gGTsqEa0Hcoh&s=' + UserInput, {mode: 'cors'})
     .then(function(response) {
-        return response.json()
+        return response.json();
     })
     .then(function(response){
         img.src = response.data.images.original.url;
     })
-    .catch(ErrorMsg);
+    .catch(function(){
+        RefreshGiphy(ErrorMsg);
+    });
 }
 
 function DifferentGiphy(e){
@@ -24,12 +26,4 @@ function DifferentGiphy(e){
     UserInput.value = '';
 }
 
-function ErrorMsg(){
-    Container.removeChild(img);
-    const Text = document.createElement('p');
-    Text.textContent = 'sorry, couldnt find any Giphys';
-    Text.id = 'TextStyle';
-    Container.appendChild(Text);
-}
-
-RefreshGiphy();
+RefreshGiphy(StartImg);

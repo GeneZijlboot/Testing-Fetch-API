@@ -9,17 +9,10 @@ body{
     Gap: 20px;
 }
 
-#Clicky{
-    display: flex;
-    gap: 5px;
-    margin-top: 90px;
+form{
+    margin-top: 50px;
 }
 
-#RefreshImg{
+#NewGiphy{
     cursor: pointer;
-}
-
-#TextStyle{
-    color:white;
-    font-size: 80px;
 }
