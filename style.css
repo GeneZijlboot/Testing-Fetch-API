@@ -1,25 +1,18 @@
 body{
     background-color: rgb(29, 136, 91);
-    height: 90vh;
-    display: flex;
-    align-self: center;
-    justify-content: center;
 }
 
-form{
+#Container{
     display: flex;
-    align-self: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 30px;
+    flex-direction: column;
+    align-items: center;
+    Gap: 20px;
 }
 
-#SearchBtn{
-    font-size: 20px;
-    background-color: rgb(58, 146, 157);
-    border: 1px solid rgb(58, 146, 157);
-    border-radius: 15px;
-    color: white;
-    width: 100px;
-    height: 50px;
+#Clicky{
+    margin-top: 90px;
+}
+
+#RefreshImg{
+    cursor: pointer;
 }
